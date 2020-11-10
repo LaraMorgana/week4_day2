@@ -1,0 +1,15 @@
+<section class="container">
+
+    <h1>Jugadores</h1>
+
+    <div class="row players-list">
+
+        {{#each players}}
+        {{>playerCard this}}
+        {{/each}}
+
+    </div>
+
+    <a href="/" class="btn btn-dark btn-sm">Volver a inicio</a>
+
+</section>

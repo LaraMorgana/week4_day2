@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ironhack platform</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <h1>Detalles de tu convocatoria</h1>
+    <hr>
+    <p>Estudiarás en el campus de {{campus}}</p>
+
+    <hr>
+
+    <h3>Detalles del curso:</h3>
+    <ul>
+        <li>Tu convocatoria será en {{{date}}}</li>
+        {{#if teacher}}
+        <li>Tu instructor/a será {{teacher}}</li>
+        {{else}}
+        <li>Aún no tienes instructor/a asignado/a</li>
+        {{/if}}
+    </ul>
+
+    <hr>
+
+    <h3>Detalles del pago:</h3>
+    <p>El precio del Bootcamp es de {{amount}}€</p>
+
+    {{#unless payment}}
+    <p style="color:red">Aún no se ha recibido tu pago</p>
+    {{/unless}}
+
+    <hr>
+
+    <h3>Asignaturas</h3>
+
+    <ul>
+        {{#each subjects}}
+        <li>{{this}}</li>
+        {{else}}
+        <li>Pronto recibirás las asignaturas via email!</li>
+        {{/each}}
+    </ul>
+
+    <hr>
+
+
+    <h3>Tus datos</h3>
+    <p>¿Hay alguno mal? ¡Avísanos! AW :3</p>
+    {{#with info}}
+    <p>{{name}} {{lastName}}</p>
+    <p>Calle: {{street}}</p>
+    <p>Número: {{number}}</p>
+    {{/with}}
+    <hr>
+
+
+    <a href="/">Volver a inicio</a>
+</body>
+
+</html>
